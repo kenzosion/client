@@ -7,7 +7,7 @@ const App = () => {
       <div>
         <BrowserRoute>
           <div>
-            <Route path="/" exact component={Stream} />
+            <Route path="/" exact component={StreamList} />
             <Route path="/" exact component={Stream} />
             <Route path="/" exact component={Stream} />
             <Route path="/" exact component={Stream} />
