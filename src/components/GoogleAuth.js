@@ -21,23 +21,34 @@ onAuthChange = () => {
     this.setState({ isSignedIn: this.auth.isSignedIn.get()});
 }
 
+onSignInClick = () => {
+    this.auth.signIn();
+}
+
+onSignOutClick = () => {
+    this.auth.signOut();
+}
+
   renderAuthButton() {
       if (this.state.isSignedIn === null ){
           return null;
       } else if (this.state.isSignedIn) {
           return (
-              <button className="ui red google button">
+              <button onClick={this.onSignOutClick} className="ui red google button">
                 <i className="google icon"></i>
                 Sign out
               </button>
           )
       } else {
           return (
-              <button className="ui green google button">
-                  <i className="google icon"></i>
-                  Sign in with Google
-              </button>
-          )
+            <button
+              onClick={this.onSignInClick}
+              className="ui green google button"
+            >
+              <i className="google icon" />
+              Sign in with Google
+            </button>
+          );
       }
   }
   render() {
