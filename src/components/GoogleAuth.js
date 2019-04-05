@@ -23,11 +23,21 @@ onAuthChange = () => {
 
   renderAuthButton() {
       if (this.state.isSignedIn === null ){
-          return <div>I do not know if we are signed in</div>;
+          return null;
       } else if (this.state.isSignedIn) {
-          return <div>I am signed in</div>;
+          return (
+              <button className="ui red google button">
+                <i className="google icon"></i>
+                Sign out
+              </button>
+          )
       } else {
-          return <div>I am not signed in</div>;
+          return (
+              <button className="ui green google button">
+                  <i className="google icon"></i>
+                  Sign in with Google
+              </button>
+          )
       }
   }
   render() {
