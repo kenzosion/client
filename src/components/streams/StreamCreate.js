@@ -6,7 +6,7 @@ class StreamCreate extends Component {
     return (
         <div className="field">
             <label>{label}</label>
-            <input {...input} />
+            <input {...input} autoComplete="off"/>
             <div>{meta.error}</div>
         </div>
     )
@@ -31,11 +31,11 @@ const validate = formValues => {
    const errors = {};
 
    if (!formValues.title) {
-      errors.title = 'You must enter a title';
+      errors.title = 'Please enter a title';
    }
 
   if (!formValues.description) {
-    errors.description = 'You must enter a description';
+    errors.description = 'Please enter a description';
   }
   return errors;
 
