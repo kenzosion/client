@@ -38,11 +38,19 @@ export const fetchStreams = () => async dispatch => {
 
 //fetching individual 
 export const fetctStream = (id) => async dispatch => {
-    const response = await streams.get(`/stream/${id}`);
+    const response = await streams.get(`/streams/${id}`);
 
     dispatch ({ type: FETCH_STREAM, payload: response.data });
-} 
+}; 
 
+//editing takes two params
+export const editStream = (id, formValues) => async dispatch => {
+    const response = await streams.put(`/streams/${id}`, formValues);
+
+    dispatch ({ type: EDIT_STREAM, payload: response.data });
+};
+
+//deleting 
 export const deleteStream = () => async dispatch => {
     const response = await streams.delete()
 }
