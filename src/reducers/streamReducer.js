@@ -3,6 +3,7 @@ import  {CREATE_STREAM,
         DELETE_STREAM,
         FETCH_STREAM,
         EDIT_STREAM }from '../actions/types.js';
+import _ from 'lodash';
 
 export default (state= {}, action ) => {
     switch (action.type) {
