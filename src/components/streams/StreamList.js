@@ -11,7 +11,12 @@ class StreamList extends Component {
 
   renderAdmin = (stream) => {
     if (stream.userId === this.props.currentUserId ) {
-      return <div>Edit/Delete</div>
+      return (
+        <div className="right floated content">
+          <button className="ui button green">Edit</button>
+          <button className="ui button red">Delete</button>
+        </div>
+      );
     }
   }
 
