@@ -9,6 +9,12 @@ class StreamList extends Component {
     return this.props.fetchStreams();
   }
 
+  renderAdmin = (stream) => {
+    if (stream.userId === this.props.currentUserId ) {
+      return <div>Edit/Delete</div>
+    }
+  }
+
   //step 4
   renderList = () => {
     return this.props.streams.map(stream => {
@@ -18,6 +24,7 @@ class StreamList extends Component {
           <div className="content">{stream.title}
             <div className="description"> {stream.description}</div>
           </div>
+          {this.renderAdmin(stream)}
         </div>
       );
     })
