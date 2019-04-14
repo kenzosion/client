@@ -25,15 +25,21 @@ class StreamList extends Component {
     return this.props.streams.map(stream => {
       return (
         <div className="item" key={stream.id}>
-          <i className="large middle aligned icon camera"></i>
-          <div className="content">{stream.title}
+          {this.renderAdmin(stream)}
+          <i className="large middle aligned icon camera" />
+          <div className="content">
+            {stream.title}
             <div className="description"> {stream.description}</div>
           </div>
-          {this.renderAdmin(stream)}
         </div>
       );
     })
   }
+
+  renderCreate =() => {
+
+  }
+
   render() {
     //step 3
     // console.log(this.props.streams);
@@ -52,7 +58,8 @@ class StreamList extends Component {
 //step 2
 const mapStateToProps = (state) => {
   return { streams: Object.values(state.streams),
-          currentUserId: state.auth.userId };
+          currentUserId: state.auth.userId,
+          isSignedIn: state.auth.isSignedIn };
 
 };
 
